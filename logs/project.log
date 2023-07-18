@@ -1,0 +1,736 @@
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:54249: runtime error: invalid memory address or nil pointer dereference
+goroutine 26 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x169c740, 0x1d29cd0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc0006883c0, 0xc0000aa840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x169c740, 0x1d29cd0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+beego_learning/service.UserAdd({{0xc000428748, 0x6}, {0xc000428750, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:13 +0xe0
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0005dc540)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000045e10, 0xc0006883c0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc0000f8c60, 0xc0006883c0, {0xc000152345, 0xc}, 0xc0005dc460?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000045e10, {0x1892ae0, 0xc0005dc460}, 0x126b514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0x1890b88?}, {0x1892ae0, 0xc0005dc460}, 0xc0000a4400)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001cc2d0, {0x18931d0, 0xc000482300})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 11:37:11.614  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 11:37:11.614  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:54304: runtime error: invalid memory address or nil pointer dereference
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0x148
+panic({0x1242060, 0x181dcf0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x262
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00049e180, 0xc00013c840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x9ba
+panic({0x1242060, 0x181dcf0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x262
+beego_learning/service.UserAdd({{0xc000444218, 0x6}, {0xc000444220, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:13 +0x1e6
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0005160e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x2d1
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(0xc0005160e0, {0xc000135b35, 0x7})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220 +0xa2
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000107e10, 0xc00049e180)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x2f72
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000294cc0, 0xc00049e180, {0xc0000322a5, 0xc}, 0x0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x137
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000107e10, {0x13d8a60, 0xc000516000}, 0xc000512000)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x15c
+net/http.serverHandler.ServeHTTP({0xc0002a4000}, {0x13d8a60, 0xc000516000}, 0xc000512000)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x494
+net/http.(*conn).serve(0xc0001221b0, {0x13d90c8, 0xc000180050})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x19b5
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0xa16
+2023/07/16 11:40:23.740  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 11:40:23.740  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:50493: <Ormer> table: `beego_learning/models.UserAdd` not found, make sure it was registered with `RegisterModel()`
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0x148
+panic({0x1abdb60, 0xc00045c390})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x262
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc000456180, 0xc0000d3340)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x9ba
+panic({0x1abdb60, 0xc00045c390})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x262
+github.com/beego/beego/v2/client/orm.(*ormBase).getMiInd(0xc000204090, {0x1a77fa0, 0xc0000825a0}, 0x1)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:120 +0x2b4
+github.com/beego/beego/v2/client/orm.(*ormBase).InsertWithCtx(0xc000204090, {0x1c69100, 0xc000040050}, {0x1a77fa0, 0xc0000825a0})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:181 +0xa5
+github.com/beego/beego/v2/client/orm.(*ormBase).Insert(0xc000204090, {0x1a77fa0, 0xc0000825a0})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:178 +0x89
+beego_learning/service.UserAdd({{0xc000040268, 0x6}, {0xc000040270, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:11 +0xf6
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0005960e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x2d1
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(0xc0005960e0, {0xc0001e0855, 0x7})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220 +0xa2
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000198c30, 0xc000456180)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x2f72
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc0001de9c0, 0xc000456180, {0xc000440545, 0xc}, 0x0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x137
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000198c30, {0x1c68a60, 0xc000596000}, 0xc000194100)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x15c
+net/http.serverHandler.ServeHTTP({0xc0001e2000}, {0x1c68a60, 0xc000596000}, 0xc000194100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x494
+net/http.(*conn).serve(0xc000122120, {0x1c690c8, 0xc0002060a0})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x19b5
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0xa16
+2023/07/16 11:43:57.250  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 11:43:57.250  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:51633: <Ormer.Using> unknown db alias name `sys_user`
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1768420, 0xc0004a02c0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00049c180, 0xc000132840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x1768420, 0xc0004a02c0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.NewOrmUsingDB({0x184bd2e, 0x8})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:599 +0xa5
+beego_learning/service.UserAdd({{0xc0004441d8, 0x6}, {0xc0004441e0, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:10 +0x7e
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0001980e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc00010bc70, 0xc00049c180)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000214ba0, 0xc00049c180, {0xc0000321a5, 0xc}, 0xc000198000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc00010bc70, {0x1972ae0, 0xc000198000}, 0x134b514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0x1970b88?}, {0x1972ae0, 0xc000198000}, 0xc00011c100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0000ea1b0, {0x19731d0, 0xc0002d05d0})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 11:46:57.268  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 11:46:57.268  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:57984: <Ormer.Using> unknown db alias name `user`
+goroutine 51 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0xb08420, 0xc0004a0340})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00049a180, 0xc00022e840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0xb08420, 0xc0004a0340})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.NewOrmUsingDB({0xbe74ee, 0x4})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:599 +0xa5
+beego_learning/service.UserAdd({{0xc000040268, 0x6}, {0xc000040270, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:10 +0x7e
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0001b00e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000207860, 0xc00049a180)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc00049a180, {0xc000118385, 0xc}, 0xc0001b0000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000207860, {0xd12ae0, 0xc0001b0000}, 0x6eb514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0xd10b88?}, {0xd12ae0, 0xc0001b0000}, 0xc0001aa000)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122120, {0xd131d0, 0xc00010c8a0})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 11:47:21.599  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 11:47:21.599  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:58031: <Ormer.Using> unknown db alias name `sys_user`
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1618420, 0xc0004a02f0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00049a180, 0xc00022e840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x1618420, 0xc0004a02f0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.NewOrmUsingDB({0x16fbd2e, 0x8})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:599 +0xa5
+beego_learning/service.UserAdd({{0xc0004421d8, 0x6}, {0xc0004421e0, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:10 +0x7e
+beego_learning/controllers.(*UserControlller).UserAdd(0xc00068e0e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc00020bad0, 0xc00049a180)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc00049a180, {0xc0000321a5, 0xc}, 0xc00068e000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc00020bad0, {0x1822ae0, 0xc00068e000}, 0x11fb514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0x1820b88?}, {0x1822ae0, 0xc00068e000}, 0xc000216100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000270120, {0x18231d0, 0xc0001fe5d0})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 11:59:29.048  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 11:59:29.048  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:55300: <Ormer.Using> unknown db alias name `sys_user`
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x908420, 0xc000081240})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00018fe90, 0xc000230840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x908420, 0xc000081240})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.NewOrmUsingDB({0x9ebd2e, 0x8})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:599 +0xa5
+beego_learning/service.UserAdd({{0xc0004421d8, 0x6}, {0xc0004421e0, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:10 +0x7e
+beego_learning/controllers.(*UserControlller).UserAdd(0xc00060e0e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000207860, 0xc00018fe90)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc00018fe90, {0xc000118305, 0xc}, 0xc00060e000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000207860, {0xb12ae0, 0xc00060e000}, 0x4eb514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0xb10b88?}, {0xb12ae0, 0xc00060e000}, 0xc000218100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122120, {0xb131d0, 0xc00010c630})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 12:01:04.827  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:01:04.827  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:50282: <Ormer.Using> unknown db alias name `user`
+goroutine 16 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0xd78420, 0xc0004502e0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00050a210, 0xc0000d3340)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0xd78420, 0xc0004502e0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.NewOrmUsingDB({0xe574ee, 0x4})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:599 +0xa5
+beego_learning/service.UserAdd({{0xc000040268, 0x6}, {0xc000040270, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:10 +0x7e
+beego_learning/controllers.(*UserControlller).UserAdd(0xc00014c0e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000198c30, 0xc00050a210)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc0001de8d0, 0xc00050a210, {0xc0002040c5, 0xc}, 0xc00014c000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000198c30, {0xf82ae0, 0xc00014c000}, 0x95b514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0xf80b88?}, {0xf82ae0, 0xc00014c000}, 0xc000194100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122120, {0xf831d0, 0xc00010c5a0})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 12:11:41.474  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:11:41.474  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:55166: runtime error: invalid memory address or nil pointer dereference
+goroutine 54 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x79c740, 0xe29cb0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00018fe90, 0xc00022e840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x79c740, 0xe29cb0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+beego_learning/service.UserAdd({{0xc0004421d8, 0x6}, {0xc0004421e0, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:12 +0xe0
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0001420e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000215a00, 0xc00018fe90)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc00018fe90, {0xc000422005, 0xc}, 0xc000142000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000215a00, {0x992b00, 0xc000142000}, 0x36b514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0x990ba8?}, {0x992b00, 0xc000142000}, 0xc000216100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122120, {0x9931f0, 0xc00010c5d0})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 12:12:06.305  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:12:06.305  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:55218: runtime error: invalid memory address or nil pointer dereference
+goroutine 52 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0x148
+panic({0x1012060, 0x15edcd0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x262
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc000506690, 0xc0000d3340)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x9ba
+panic({0x1012060, 0x15edcd0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x262
+beego_learning/service.UserAdd({{0xc0003ca1e8, 0x6}, {0xc0003ca1f0, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:12 +0x1c6
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0001360e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x2d1
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(0xc0001360e0, {0xc0001e0675, 0x7})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220 +0xa2
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000198b60, 0xc000506690)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x2f72
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc0001de9c0, 0xc000506690, {0xc00043e145, 0xc}, 0x0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x137
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000198b60, {0x11a8a60, 0xc000136000}, 0xc000194100)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x15c
+net/http.serverHandler.ServeHTTP({0xc0001e2000}, {0x11a8a60, 0xc000136000}, 0xc000194100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x494
+net/http.(*conn).serve(0xc000122120, {0x11a90c8, 0xc00050c050})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x19b5
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0xa16
+2023/07/16 12:18:44.137  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:18:44.137  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:54951: runtime error: invalid memory address or nil pointer dereference
+goroutine 31 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x15bc740, 0x1c49cb0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00049c180, 0xc000230840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x15bc740, 0x1c49cb0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+beego_learning/service.UserAdd({{0xc000040188, 0x6}, {0xc000040190, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:12 +0xaa
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0000ae0e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc00020b930, 0xc00049c180)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc00049c180, {0xc000152005, 0xc}, 0xc0000ae000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc00020b930, {0x17b2b00, 0xc0000ae000}, 0x118b514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0x17b0ba8?}, {0x17b2b00, 0xc0000ae000}, 0xc000216100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000182120, {0x17b31f0, 0xc000042810})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 12:21:03.730  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:21:03.731  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:61397: <Ormer> table: `beego_learning/models.UserAdd` not found, make sure it was registered with `RegisterModel()`
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x14f8420, 0xc000081240})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc0001dc5a0, 0xc00022e840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x14f8420, 0xc000081240})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.(*ormBase).getMiInd(0xc00009f1d8?, {0x14b3620?, 0xc0000825a0?}, 0x1)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:120 +0x1f3
+github.com/beego/beego/v2/client/orm.(*ormBase).InsertWithCtx(0xc000008300, {0xc00009f240?, 0x1173b16?}, {0x14b3620?, 0xc0000825a0?})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:181 +0x45
+github.com/beego/beego/v2/client/orm.(*ormBase).Insert(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm.go:178
+beego_learning/service.UserAdd({{0xc000040268, 0x6}, {0xc000040270, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:11 +0x8a
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0000000e0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc00020f930, 0xc0001dc5a0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc0001dc5a0, {0xc000108045, 0xc}, 0xc000000000?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc00020f930, {0x1702ae0, 0xc000000000}, 0x10db514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0x1700b88?}, {0x1702ae0, 0xc000000000}, 0xc000216100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0002701b0, {0x17031d0, 0xc00049a1e0})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 12:22:15.086  [I] [parser.go:413]  generate router from comments
+2023/07/16 12:22:15.087  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 12:22:15.848  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0408ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:22:45.147  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:22:45.147  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 12:23:55.621  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  57.0308995s|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:23:58.679  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:23:58.679  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 12:24:03.118  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     5.0499ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:25:26.951  [I] [parser.go:413]  generate router from comments
+2023/07/16 12:25:26.952  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 12:25:27.615  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.5593ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:25:36.035  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.4053ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:27:01.173  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:27:01.173  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 12:27:04.275  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    46.1208ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:27:29.413  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    40.2934ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:27:55.507  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    40.2559ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:34:31.270  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:34:31.272  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 12:34:33.275  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    57.1409ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 12:36:06.107  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 12:36:06.107  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 12:36:07.132  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    56.4738ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 14:48:15.789  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 14:48:15.789  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 14:51:20.925  [I] [parser.go:413]  generate router from comments
+2023/07/16 14:51:20.926  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 14:51:30.518  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 14:51:30.518  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 14:51:40.616  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      999.3µs|   match|[44m GET     [0m /swagger/
+2023/07/16 14:51:40.645  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/swagger-ui.css
+2023/07/16 14:51:40.654  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      491.9µs|   match|[44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/07/16 14:51:40.654  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/07/16 14:51:40.844  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.1634ms|   match|[44m GET     [0m /swagger/favicon-32x32.png
+2023/07/16 14:51:40.849  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      687.6µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 14:51:50.677  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    55.0545ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 15:30:19.199  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.2679ms|   match|[43m PUT     [0m /v1/user/update   r:/v1/user/update
+2023/07/16 15:32:25.310  [I] [parser.go:413]  generate router from comments
+2023/07/16 15:32:25.311  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 15:55:14.425  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 15:55:14.425  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 15:55:19.348  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      528.9µs|   match|[43m PUT     [0m /v1/user/update   r:/v1/user/update
+2023/07/16 15:55:52.376  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 15:55:52.376  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 15:56:33.942  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  37.3438692s|   match|[43m PUT     [0m /v1/user/update   r:/v1/user/update
+2023/07/16 15:57:10.640  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 15:57:10.640  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 15:57:11.954  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     5.0865ms|   match|[43m PUT     [0m /v1/user/update   r:/v1/user/update
+2023/07/16 15:57:24.898  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.3683ms|   match|[43m PUT     [0m /v1/user/update   r:/v1/user/update
+2023/07/16 15:57:58.570  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 15:57:58.570  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 15:58:04.144  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    56.5134ms|   match|[43m PUT     [0m /v1/user/update   r:/v1/user/update
+2023/07/16 16:04:51.995  [I] [parser.go:413]  generate router from comments
+2023/07/16 16:04:51.997  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:05:03.570  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:05:03.570  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:05:08.627  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:05:08.627  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:05:08.629  [C] [server.go:258]  ListenAndServe:  listen tcp 127.0.0.1:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2023/07/16 16:05:15.271  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      435.1µs|   match|[44m GET     [0m /swagger/
+2023/07/16 16:05:15.533  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 16:05:36.541  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     5.5186ms|   match|[41m DELETE  [0m /v1/user/delete/11   r:/v1/user/delete/:uid
+2023/07/16 16:07:18.844  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:07:18.845  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:07:18.845  [C] [server.go:258]  ListenAndServe:  listen tcp 127.0.0.1:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2023/07/16 16:07:29.292  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:07:29.292  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:10:27.073  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|2m55.9839949s|   match|[41m DELETE  [0m /v1/user/delete/11   r:/v1/user/delete/:uid
+2023/07/16 16:10:32.031  [I] [parser.go:413]  generate router from comments
+2023/07/16 16:10:32.033  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:11:01.857  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  27.9750685s|   match|[41m DELETE  [0m /v1/user/delete/11   r:/v1/user/delete/:uid
+2023/07/16 16:11:21.567  [I] [parser.go:413]  generate router from comments
+2023/07/16 16:11:21.568  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:11:24.282  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     6.0374ms|   match|[41m DELETE  [0m /v1/user/delete/11   r:/v1/user/delete/:uid
+2023/07/16 16:12:10.411  [I] [parser.go:413]  generate router from comments
+2023/07/16 16:12:10.413  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:12:21.665  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      4.663ms|   match|[41m DELETE  [0m /v1/user/delete/11   r:/v1/user/delete/:uid
+2023/07/16 16:16:25.402  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:16:25.403  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:16:32.145  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.0922ms|   match|[41m DELETE  [0m /v1/user/delete/11   r:/v1/user/delete/:uid
+2023/07/16 16:17:38.406  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:17:38.407  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:18:20.778  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  38.2842868s|   match|[41m DELETE  [0m /v1/user/delete/11   r:/v1/user/delete/:uid
+2023/07/16 16:18:23.837  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:18:23.837  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:18:33.373  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.9811ms|   match|[41m DELETE  [0m /v1/user/delete/1   r:/v1/user/delete/:uid
+2023/07/16 16:25:36.750  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:25:36.751  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:25:48.028  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      584.3µs|   match|[44m GET     [0m /swagger/
+2023/07/16 16:25:48.189  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      234.5µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 16:30:31.902  [I] [parser.go:413]  generate router from comments
+2023/07/16 16:30:31.903  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:30:53.433  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    55.3233ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+2023/07/16 16:31:33.484  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:31:33.485  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:31:36.037  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.0128ms|   match|[44m GET     [0m /swagger/
+2023/07/16 16:31:36.210  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|         97µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 16:31:38.362  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      544.5µs|   match|[44m GET     [0m /swagger/
+2023/07/16 16:31:38.500  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|        920µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 16:31:39.515  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      125.4µs|   match|[44m GET     [0m /swagger/
+2023/07/16 16:31:39.641  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      588.1µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 16:31:40.476  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      471.1µs|   match|[44m GET     [0m /swagger/
+2023/07/16 16:31:40.600  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      757.1µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 16:31:41.496  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      255.5µs|   match|[44m GET     [0m /swagger/
+2023/07/16 16:31:41.613  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|         91µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 16:38:11.007  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|    54.8793ms|   match|[46m POST    [0m /v1/user/add   r:/v1/user/add
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:55930: unknown field/column name `name_contains`
+goroutine 98 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0xefea40, 0xc000217780})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc0004a8180, 0xc000230840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0xefea40, 0xc000217780})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.(*dbTables).getCondSQL(0xc00058ae18, 0xc000008510, 0x0, 0x3?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/db_tables.go:368 +0x99f
+github.com/beego/beego/v2/client/orm.(*dbBase).ReadBatch(0xc000082e10, {0x110e990, 0xc000233500}, 0xc0002a6180, 0xc0002494a0, 0x0?, {0xeb9180?, 0xc0000084c8?}, 0x0?, {0x0, ...})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/db.go:1024 +0x7ef
+github.com/beego/beego/v2/client/orm.(*querySet).All(0xc00044c730?, {0xeb9180?, 0xc0000084c8?}, {0x0?, 0xd39860?, 0xc000248550?})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm_queryset.go:244 +0x9a
+beego_learning/service.UserList({0xc00044c730, 0x3})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:26 +0xf6
+beego_learning/controllers.(*UserControlller).UserList(0xc0000a4a00)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:34 +0x45
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc00020dad0, 0xc0004a8180)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc0004a8180, {0xc0004620f4, 0xd}, 0xc0004b0500?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc00020dad0, {0x110a880, 0xc0002a22a0}, 0x7fc0b3?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0xc0004a8630?}, {0x110a880, 0xc0002a22a0}, 0xc00021a300)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000270120, {0x110af70, 0xc00016c840})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 16:40:53.194  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:40:53.194  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:55971: assignment to entry in nil map
+goroutine 51 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1383060, 0x1573d50})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00010c1e0, 0xc000230840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x1383060, 0x1573d50})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+beego_learning/service.UserList({0xc000040180, 0x3})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:30 +0x138
+beego_learning/controllers.(*UserControlller).UserList(0xc0000a48c0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:34 +0x45
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc00020d930, 0xc00010c1e0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc000292ba0, 0xc00010c1e0, {0xc000032394, 0xd}, 0xc0004b2f00?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc00020d930, {0x157a880, 0xc0004d6000}, 0xc6c0b3?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0xc00010c090?}, {0x157a880, 0xc0004d6000}, 0xc0001a2100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000270120, {0x157af70, 0xc0004aa600})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 16:41:57.665  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:41:57.666  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:43:56.275  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:43:56.276  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:65288: unknown field/column name `name_contains`
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x116ea40, 0xc000109320})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc00061a3c0, 0xc0000ae840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x116ea40, 0xc000109320})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+github.com/beego/beego/v2/client/orm.(*dbTables).getCondSQL(0xc00011ce10, 0xc0001122a0, 0x0, 0x3?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/db_tables.go:368 +0x99f
+github.com/beego/beego/v2/client/orm.(*dbBase).ReadBatch(0xc000108de0, {0x137e990, 0xc000085560}, 0xc000000180, 0xc0000c1540, 0x0?, {0x1129180?, 0xc0001120c0?}, 0x0?, {0x0, ...})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/db.go:1024 +0x7ef
+github.com/beego/beego/v2/client/orm.(*querySet).All(0xc000126150?, {0x1129180?, 0xc0001120c0?}, {0x0?, 0x3?, 0xfa9860?})
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/client/orm/orm_queryset.go:244 +0x9a
+beego_learning/service.UserList({0xc000126150, 0x3})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:26 +0x10c
+beego_learning/controllers.(*UserControlller).UserList(0xc0000c8000)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:34 +0x45
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000047ad0, 0xc00061a3c0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc0000fac60, 0xc00061a3c0, {0xc000440004, 0xd}, 0xc00049a500?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000047ad0, {0x137a880, 0xc000512000}, 0xa6c0b3?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0xc00061a270?}, {0x137a880, 0xc000512000}, 0xc000222100)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00009c240, {0x137af70, 0xc000492300})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/07/16 16:44:18.356  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:44:18.357  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:44:20.554  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|        759µs|   match|[44m GET     [0m /v1/user/list   r:/v1/user/list
+2023/07/16 16:45:55.149  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 16:45:55.149  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:47:59.486  [I] [parser.go:413]  generate router from comments
+2023/07/16 16:47:59.487  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 16:48:31.019  [I] [parser.go:413]  generate router from comments
+2023/07/16 16:48:31.020  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:13:47.039  [I] [parser.go:413]  generate router from comments
+2023/07/16 17:13:47.041  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:13:59.265  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:13:59.266  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:14:02.522  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:14:02.522  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:14:04.607  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:14:04.607  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:14:05.106  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      514.8µs|   match|[44m GET     [0m /swagger/
+2023/07/16 17:14:05.287  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|       82.1µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 17:14:06.688  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:14:06.689  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:14:08.706  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:14:08.706  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:14:10.448  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.3016ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:14:10.656  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:14:10.656  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:14:15.733  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.2819ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:14:47.109  [I] [parser.go:413]  generate router from comments
+2023/07/16 17:14:47.110  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:14:58.439  [I] [parser.go:413]  generate router from comments
+2023/07/16 17:14:58.439  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:15:02.770  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      101.4µs|   match|[44m GET     [0m /swagger/
+2023/07/16 17:15:02.928  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      855.4µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 17:15:05.410  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.3313ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:16:03.215  [I] [parser.go:413]  generate router from comments
+2023/07/16 17:16:03.216  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:16:04.450  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:16:04.450  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:16:04.904  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/
+2023/07/16 17:16:05.057  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      535.2µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 17:16:06.470  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:16:06.471  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:16:07.548  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.8159ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:16:08.522  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      2.852ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:16:09.069  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.3518ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:16:09.260  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.1398ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:16:09.474  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.9436ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:16:27.543  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:16:27.544  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:16:27.544  [C] [server.go:258]  ListenAndServe:  listen tcp 127.0.0.1:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2023/07/16 17:16:37.450  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:16:37.451  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:18:07.923  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|  1m9.211784s|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:18:09.565  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:18:09.565  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:18:19.716  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.3388ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:18:20.419  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      2.399ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:18:20.619  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.9512ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:18:20.785  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0154ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:18:20.946  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      2.618ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:18:48.438  [I] [parser.go:413]  generate router from comments
+2023/07/16 17:18:48.439  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:19:14.604  [I] [parser.go:413]  generate router from comments
+2023/07/16 17:19:14.605  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:19:17.974  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/
+2023/07/16 17:19:18.131  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      113.9µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 17:19:21.015  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.8304ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:20:28.356  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[46m POST    [0m /v1/captcha/post   r:/v1/captcha/post
+2023/07/16 17:20:46.972  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     3.2325ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 17:21:08.681  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[46m POST    [0m /v1/captcha/post   r:/v1/captcha/post
+2023/07/16 17:27:48.215  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:27:48.216  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:28:32.868  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 17:28:32.868  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 17:28:41.850  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      943.9µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 17:28:45.458  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     4.4654ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 19:19:32.178  [I] [parser.go:413]  generate router from comments
+2023/07/16 19:19:32.180  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:19:32.388  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|    10.0013ms|   match|[44m GET     [0m /swagger/
+2023/07/16 19:19:32.452  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|     1.0004ms|   match|[44m GET     [0m /swagger/swagger-ui.css
+2023/07/16 19:19:32.454  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/swagger-ui-bundle.js
+2023/07/16 19:19:32.454  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/swagger-ui-standalone-preset.js
+2023/07/16 19:19:32.694  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 19:19:32.695  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/favicon-32x32.png
+2023/07/16 19:19:37.166  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:19:37.166  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:19:41.508  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:19:41.509  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:19:45.562  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:19:45.562  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:19:48.597  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:19:48.597  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:19:51.471  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:19:51.471  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:19:54.676  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:19:54.676  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:19:57.569  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:19:57.569  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:20:00.380  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:20:00.381  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:20:03.066  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:20:03.066  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:20:05.768  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:20:05.769  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:20:08.579  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:20:08.580  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:20:11.512  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:20:11.513  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:20:14.502  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:20:14.502  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:21:14.233  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:21:14.233  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:21:58.320  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:21:58.320  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:22:10.736  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      908.8µs|   match|[44m GET     [0m /swagger/
+2023/07/16 19:22:10.920  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      970.9µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 19:24:57.097  [I] [parser.go:413]  generate router from comments
+2023/07/16 19:24:57.099  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:24:57.252  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      506.1µs|   match|[44m GET     [0m /swagger/
+2023/07/16 19:24:57.396  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      828.1µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 19:25:31.545  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /swagger/
+2023/07/16 19:25:31.737  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0002ms|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 19:25:35.712  [I] [parser.go:413]  generate router from comments
+2023/07/16 19:25:35.713  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:25:35.947  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.0423ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 19:26:48.167  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:26:48.167  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:28:30.922  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/16 19:28:30.923  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/16 19:28:33.589  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /swagger/
+2023/07/16 19:28:33.755  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      847.4µs|   match|[44m GET     [0m /swagger/swagger.json
+2023/07/16 19:28:37.561  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      2.338ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 19:30:19.253  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      134.5µs|   match|[46m POST    [0m /v1/captcha/verify   r:/v1/captcha/verify
+2023/07/16 19:39:25.912  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     2.0998ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 19:41:41.912  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9837ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 19:44:04.937  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      388.8µs|   match|[46m POST    [0m /v1/captcha/verify   r:/v1/captcha/verify
+2023/07/16 19:44:15.319  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.5393ms|   match|[44m GET     [0m /v1/captcha/get   r:/v1/captcha/get
+2023/07/16 19:44:42.671  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      818.6µs|   match|[46m POST    [0m /v1/captcha/verify   r:/v1/captcha/verify
+2023/07/17 21:55:10.073  [I] [parser.go:413]  generate router from comments
+2023/07/17 21:55:10.074  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/17 21:55:36.721  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     6.1998ms|   match|[44m GET     [0m /v1/user/list   r:/v1/user/list
+2023/07/17 21:56:44.357  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/17 21:56:44.357  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/17 21:56:46.181  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|      1.195ms|   match|[44m GET     [0m /v1/user/list   r:/v1/user/list
+2023/07/17 21:57:44.964  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
+2023/07/17 21:57:44.964  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
+2023/07/17 21:57:46.614  [D] [router.go:955]  |      127.0.0.1|[42m 200 [0m|     1.9518ms|   match|[44m GET     [0m /v1/user/list   r:/v1/user/list

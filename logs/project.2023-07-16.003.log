@@ -1,0 +1,28 @@
+0001/01/01 00:00:00.000  [M] [log.go:204]  [HTTP] http: panic serving 127.0.0.1:54243: runtime error: invalid memory address or nil pointer dereference
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x169c740, 0x1d29cd0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:890 +0x263
+github.com/beego/beego/v2/server/web.defaultRecoverPanic(0xc0006883c0, 0xc0000aa840)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/config.go:181 +0x43c
+panic({0x169c740, 0x1d29cd0})
+	D:/Program Files/Go1.20.5/src/runtime/panic.go:884 +0x213
+beego_learning/service.UserAdd({{0xc000428568, 0x6}, {0xc000428570, 0x6}})
+	D:/MyCode/beego_workspace/src/beego_learning/service/user.go:13 +0xe0
+beego_learning/controllers.(*UserControlller).UserAdd(0xc0005dc2a0)
+	D:/MyCode/beego_workspace/src/beego_learning/controllers/user.go:57 +0x1ec
+github.com/beego/beego/v2/server/web.(*Controller).HandlerFunc(...)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/controller.go:220
+github.com/beego/beego/v2/server/web.(*ControllerRegister).serveHttp(0xc000045e10, 0xc0006883c0)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:879 +0x1d39
+github.com/beego/beego/v2/server/web.(*FilterRouter).filter(0xc0000f8c60, 0xc0006883c0, {0xc000152265, 0xc}, 0xc0005dc1c0?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/filter.go:81 +0x222
+github.com/beego/beego/v2/server/web.(*ControllerRegister).ServeHTTP(0xc000045e10, {0x1892ae0, 0xc0005dc1c0}, 0x126b514?)
+	D:/MyCode/beego_workspace/pkg/mod/github.com/beego/beego/v2@v2.0.1/server/web/router.go:664 +0x110
+net/http.serverHandler.ServeHTTP({0x1890b88?}, {0x1892ae0, 0xc0005dc1c0}, 0xc0001c2000)
+	D:/Program Files/Go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001821b0, {0x18931d0, 0xc000482300})
+	D:/Program Files/Go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	D:/Program Files/Go1.20.5/src/net/http/server.go:3089 +0x5ed
