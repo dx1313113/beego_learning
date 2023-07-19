@@ -1,4 +1,0 @@
-2023/07/16 11:36:37.525  [I] [parser.go:85]  D:\MyCode\beego_workspace\src\beego_learning\controllers no changed
-2023/07/16 11:36:37.526  [I] [server.go:241]  http server Running on http://127.0.0.1:8080
-2023/07/16 11:36:46.859  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      295.8µs|   match|[44m GET     [0m /swagger/
-2023/07/16 11:36:47.025  [D] [router.go:955]  |      127.0.0.1|[47m 304 [0m|      883.3µs|   match|[44m GET     [0m /swagger/swagger.json
