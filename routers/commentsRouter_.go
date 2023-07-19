@@ -19,13 +19,13 @@ func init() {
     beego.GlobalControllerRouter["beego_learning/controllers:CaptchaController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:CaptchaController"],
         beego.ControllerComments{
             Method: "Post",
-            Router: "/post",
+            Router: "/verify",
             AllowHTTPMethods: []string{"post"},
             MethodParams: param.Make(),
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"],
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
         beego.ControllerComments{
             Method: "UserAdd",
             Router: "/add",
@@ -34,7 +34,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"],
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
         beego.ControllerComments{
             Method: "UserDelete",
             Router: "/delete/:uid",
@@ -43,7 +43,16 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"],
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
+        beego.ControllerComments{
+            Method: "UserDelete2",
+            Router: "/delete/batch",
+            AllowHTTPMethods: []string{"DELETE"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
         beego.ControllerComments{
             Method: "UserList",
             Router: "/list",
@@ -52,7 +61,34 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"],
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
+        beego.ControllerComments{
+            Method: "UserList2",
+            Router: "/list",
+            AllowHTTPMethods: []string{"post"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
+        beego.ControllerComments{
+            Method: "Login",
+            Router: "/login",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
+        beego.ControllerComments{
+            Method: "Register",
+            Router: "/register",
+            AllowHTTPMethods: []string{"post"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["beego_learning/controllers:UserController"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserController"],
         beego.ControllerComments{
             Method: "UserUpdate",
             Router: "/update",

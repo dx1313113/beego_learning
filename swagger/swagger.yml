@@ -56,7 +56,7 @@ paths:
       tags:
       - user
       description: |-
-        批量删除事件
+        删除用户
         <br>
       parameters:
       - in: path
@@ -67,19 +67,52 @@ paths:
       responses:
         "200":
           description: '{string} string "{"success":true,"data":{},"msg":"批量删除成功"}"'
+  /user/delete/batch:
+    delete:
+      tags:
+      - user
+      description: |-
+        批量删除用户
+        <br>
+      parameters:
+      - in: body
+        name: ids
+        description: 用户ids
+        required: true
+        schema:
+          $ref: '#/definitions/models.BaseDelete'
+      responses:
+        "200":
+          description: '{string} string "{"success":true,"data":{},"msg":"批量删除成功"}"'
   /user/list:
     get:
       tags:
       - user
       description: |-
-        Get all user list
+        使用get获取用户信息
         <br>
+    post:
+      tags:
+      - user
+      description: |-
+        使用post获取用户信息
+        <br>
+      parameters:
+      - in: body
+        name: data
+        description: 查询条件
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserQuery'
+      responses:
+        "200":
+          description: '{any} any'
   /user/update:
     put:
       tags:
       - user
       description: |-
-        更新事件
+        更新用户
         <br>
       parameters:
       - in: body
@@ -92,6 +125,15 @@ paths:
         "200":
           description: '{string} string "{"success":true,"data":{},"msg":"更新成功"}"'
 definitions:
+  models.BaseDelete:
+    title: BaseDelete
+    type: object
+    properties:
+      ids:
+        type: array
+        items:
+          type: integer
+          format: int64
   models.Captcha:
     title: Captcha
     type: object
@@ -100,21 +142,50 @@ definitions:
         type: string
       ID:
         type: string
+  models.Pagination:
+    title: Pagination
+    type: object
+    properties:
+      PageCurrent:
+        type: integer
+        format: int64
+      PageSize:
+        type: integer
+        format: int64
   models.UserAdd:
     title: UserAdd
     type: object
     properties:
+      email:
+        type: string
+      mobile:
+        type: string
       name:
         type: string
       pwd:
         type: string
-  models.UserUpdate:
-    title: UserUpdate
+  models.UserQuery:
+    title: UserQuery
     type: object
     properties:
       id:
         type: integer
         format: int64
+      name:
+        type: string
+      page:
+        $ref: '#/definitions/models.Pagination'
+  models.UserUpdate:
+    title: UserUpdate
+    type: object
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+        format: int64
+      mobile:
+        type: string
       name:
         type: string
       pwd:

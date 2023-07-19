@@ -45,9 +45,27 @@ func init() {
 
     beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"],
         beego.ControllerComments{
+            Method: "UserDelete2",
+            Router: "/delete/batch",
+            AllowHTTPMethods: []string{"DELETE"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"],
+        beego.ControllerComments{
             Method: "UserList",
             Router: "/list",
             AllowHTTPMethods: []string{"Get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"] = append(beego.GlobalControllerRouter["beego_learning/controllers:UserControlller"],
+        beego.ControllerComments{
+            Method: "UserList2",
+            Router: "/list",
+            AllowHTTPMethods: []string{"post"},
             MethodParams: param.Make(),
             Filters: nil,
             Params: nil})

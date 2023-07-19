@@ -19,7 +19,7 @@ func init() {
 		// NS 级别的Namespace 去定义 理论上Namespace是可以无限进行嵌套的
 		beego.NSNamespace("/user",
 			beego.NSInclude(
-				&controllers.UserControlller{},
+				&controllers.UserController{},
 			),
 		),
 		beego.NSNamespace("/captcha",

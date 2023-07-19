@@ -1,13 +1,16 @@
 package models
 
 import (
-	"github.com/beego/beego/v2/client/orm"
+	"github.com/beego/beego/v2/server/web"
+	"github.com/beego/i18n"
 	"time"
 )
 
-func init() {
-	// 需要在init中注册定义的model
-	orm.RegisterModel(new(User))
+type BaseController struct {
+	web.Controller
+	i18n.Locale
+	user    User
+	isLogin bool
 }
 
 type BaseModel struct {
@@ -27,10 +30,42 @@ type Response struct {
 	//Error error `json:"error" default:"nil"`
 }
 
+type Page struct {
+	PageCurrent int
+	PageSize    int
+	TotalPage   int
+	TotalCount  int64
+	FirstPage   bool
+	LastPage    bool
+}
+
+type Pagination struct {
+	PageCurrent int
+	PageSize    int
+}
+
 type PaginateResponse struct {
 	Code int
 	Msg  string
 	Data any //data结构体类型
 	Page Page
 	//Error error `json:"error" default:"nil"`
+}
+
+func (c *BaseController) Respond(code int, message string, data ...interface{}) {
+	c.Ctx.Output.SetStatus(code)
+	var d interface{}
+	if len(data) > 0 {
+		d = data[0]
+	}
+	c.Data["json"] = struct {
+		Code    int         `json:"code"`
+		Message string      `json:"message"`
+		Data    interface{} `json:"data,omitempty"`
+	}{
+		Code:    code,
+		Message: message,
+		Data:    d,
+	}
+	c.ServeJSON()
 }

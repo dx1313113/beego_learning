@@ -1,6 +1,7 @@
 package initialize
 
 import (
+	"beego_learning/models"
 	"database/sql"
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/beego/beego/v2/core/config"
@@ -9,6 +10,11 @@ import (
 	//切记：导入驱动包
 	_ "github.com/go-sql-driver/mysql"
 )
+
+func init() {
+	// 需要在init中注册定义的model
+	orm.RegisterModel(new(models.User))
+}
 
 func OrmMysql() *sql.DB {
 	//注册数据库驱动
