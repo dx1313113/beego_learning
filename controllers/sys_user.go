@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"beego_learning/middleware"
 	"beego_learning/models"
 	"beego_learning/service"
 	"encoding/json"
@@ -26,6 +27,9 @@ func (this *UserController) URLMapping() {
 	this.Mapping("UserAdd", this.UserAdd)
 	this.Mapping("UserUpdate", this.UserUpdate)
 	this.Mapping("UserDelete", this.UserDelete)
+	this.Mapping("UserDeleteBatch", this.UserDeleteBatch)
+	this.Mapping("Login", this.Login)
+	this.Mapping("Register", this.Register)
 }
 
 // UserList @Title UserList
@@ -39,12 +43,12 @@ func (this *UserController) UserList() {
 	req["name"] = this.GetString("name")
 	req["pageCurrent"], _ = this.GetInt("pageCurrent", 1)
 	req["pageSize"], _ = this.GetInt("pageSize", 10)
-	if ret, err := service.UserList(req); err == nil {
-		this.Data["json"] = models.Response{Code: 200, Msg: "查询成功", Data: ret}
+	if ret, err := service.UserList(req); err != nil {
+		this.Respond(http.StatusBadRequest, err.Error())
+		return
 	} else {
-		this.Data["json"] = models.Response{Code: 500, Msg: "查询失败"}
+		this.Respond(http.StatusOK, "获取用户列表成功", ret)
 	}
-	this.ServeJSON()
 }
 
 // UserList2 @Title UserList2
@@ -55,15 +59,13 @@ func (this *UserController) UserList() {
 func (this *UserController) UserList2() {
 	var user models.UserQuery
 	if err := json.Unmarshal(this.Ctx.Input.RequestBody, &user); err == nil {
-		if ret, err := service.UserList2(user); err == nil {
-			this.Data["json"] = models.Response{Code: 200, Msg: "查询成功", Data: ret}
+		if ret, err := service.UserList2(user); err != nil {
+			this.Respond(http.StatusBadRequest, err.Error())
+			return
 		} else {
-			this.Data["json"] = models.Response{Code: 500, Msg: "查询失败"}
+			this.Respond(http.StatusOK, "获取用户列表成功", ret)
 		}
-	} else {
-		this.Data["json"] = models.Response{Code: 500, Msg: "查询条件解析失败"}
 	}
-	this.ServeJSON()
 }
 
 // UserAdd @Title UserAdd
@@ -77,15 +79,15 @@ func (this *UserController) UserAdd() {
 	tt := this.Ctx.Input.RequestBody
 	print(tt)
 	if err = json.Unmarshal(this.Ctx.Input.RequestBody, &user); err == nil {
-		if ret, err := service.UserAdd(user); err == nil {
-			this.Data["json"] = models.Response{Code: 200, Msg: "添加成功", Data: ret}
+		if ret, err := service.UserAdd(user); err != nil {
+			this.Respond(http.StatusBadRequest, err.Error())
+			return
 		} else {
-			this.Data["json"] = models.Response{Code: 500, Msg: "添加失败"}
+			this.Respond(http.StatusOK, "获取用户列表成功", ret)
 		}
 	} else {
-		this.Data["json"] = models.Response{Code: 500, Msg: "json格式解析失败"}
+		this.Respond(http.StatusBadRequest, "json格式解析失败")
 	}
-	this.ServeJSON()
 }
 
 // UserUpdate @Title User_update
@@ -98,9 +100,9 @@ func (this *UserController) UserUpdate() {
 	var err error
 	if err = json.Unmarshal(this.Ctx.Input.RequestBody, &user); err == nil {
 		if ret, err := service.UserUpdate(&user); err == nil {
-			this.Data["json"] = models.Response{Code: 200, Msg: "修改成功", Data: ret}
+			this.Data["json"] = models.Response{Code: http.StatusOK, Msg: "修改成功", Data: ret}
 		} else {
-			this.Data["json"] = models.Response{Code: 500, Msg: "修改失败"}
+			this.Data["json"] = models.Response{Code: http.StatusNotModified, Msg: "修改失败"}
 		}
 	}
 	this.ServeJSON()
@@ -114,28 +116,28 @@ func (this *UserController) UserUpdate() {
 func (this *UserController) UserDelete() {
 	var uid, _ = this.GetInt(":uid")
 	if ret, err := service.UserDelete(uid); err == nil {
-		this.Data["json"] = models.Response{Code: 200, Msg: "删除成功", Data: ret}
+		this.Data["json"] = models.Response{Code: http.StatusOK, Msg: "删除成功", Data: ret}
 	} else {
-		this.Data["json"] = models.Response{Code: 500, Msg: "删除失败"}
+		this.Data["json"] = models.Response{Code: http.StatusNotModified, Msg: err.Error()}
 	}
 	this.ServeJSON()
 }
 
-// UserDelete2 @Title User_delete2
+// UserDeleteBatch @Title User_delete2
 // @Description 批量删除用户
 // @Param ids body models.BaseDelete true "用户ids"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"批量删除成功"}"
 // @router /delete/batch [DELETE]
-func (this *UserController) UserDelete2() {
+func (this *UserController) UserDeleteBatch() {
 	var ids models.BaseDelete
 	if err := json.Unmarshal(this.Ctx.Input.RequestBody, &ids); err == nil {
-		if ret, err := service.UserDelete2(ids); err == nil {
-			this.Data["json"] = models.Response{Code: 200, Msg: "删除成功", Data: ret}
+		if ret, err := service.UserDeleteBatch(ids); err == nil {
+			this.Data["json"] = models.Response{Code: http.StatusOK, Msg: "删除成功", Data: ret}
 		} else {
-			this.Data["json"] = models.Response{Code: 500, Msg: "删除失败"}
+			this.Data["json"] = models.Response{Code: http.StatusNotModified, Msg: err.Error()}
 		}
 	} else {
-		this.Data["json"] = models.Response{Code: 500, Msg: "json格式解析失败"}
+		this.Data["json"] = models.Response{Code: http.StatusBadRequest, Msg: "json格式解析失败"}
 	}
 	this.ServeJSON()
 }
@@ -145,23 +147,30 @@ func (this *UserController) UserDelete2() {
 // @Param data body models.LoginRequest true "用户登录"
 // @Success 200 {Respond} Respond
 // @router /login
-func (c *UserController) Login() {
+func (this *UserController) Login() {
 	lr := new(models.LoginRequest)
+	if store.Verify(lr.CaptchaId, lr.Captcha, true) {
+		if err := this.unmarshalPayload(lr); err != nil {
+			this.Respond(http.StatusBadRequest, err.Error())
+			return
+		}
+		if lrs, statusCode, err := service.Login(lr); err != nil {
+			this.Respond(statusCode, err.Error())
+			return
+		} else {
+			next, err := middleware.TokenNext(lrs, 0)
+			if err != nil {
+				this.Respond(http.StatusBadRequest, err.Error())
+				return
+			}
+			// 将token设置到Header
+			this.Ctx.Output.Header("Authorization", next.Token)
+			this.Respond(http.StatusOK, "登陆成功", next)
 
-	if err := c.unmarshalPayload(lr); err != nil {
-		c.Respond(http.StatusBadRequest, err.Error())
-		return
+		}
+	} else {
+		this.Respond(400, "验证码错误")
 	}
-
-	lrs, statusCode, err := service.Login(lr)
-	if err != nil {
-		c.Respond(statusCode, err.Error())
-		return
-	}
-	// 将token设置到Header
-	c.Ctx.Output.Header("Authorization", lrs.Token)
-
-	c.Respond(http.StatusOK, "", lrs)
 }
 
 // Register
@@ -170,33 +179,33 @@ func (c *UserController) Login() {
 // @Param data body models.RegisterRequest true "用户注册"
 // @Success 200 {Respond} Respond
 // @router /register [post]
-func (c *UserController) Register() {
+func (this *UserController) Register() {
 	cu := new(models.RegisterRequest)
 	// 获取request body
-	if err := c.unmarshalPayload(cu); err != nil {
-		c.Respond(http.StatusBadRequest, err.Error())
+	if err := this.unmarshalPayload(cu); err != nil {
+		this.Respond(http.StatusBadRequest, err.Error())
 	}
 	createUser, statusCode, err := service.Register(cu)
 	if err != nil {
-		c.Respond(statusCode, err.Error())
+		this.Respond(statusCode, err.Error())
 		return
 	}
-	c.Respond(http.StatusOK, "", createUser)
+	this.Respond(http.StatusOK, "", createUser)
 }
 
 // 解析请求，并将请求体存储到v中
 // unmarshalPayload
 // @Param	v	interface{}	true	"接收解析后的请求体的变量"
-func (c *UserController) unmarshalPayload(v interface{}) error {
+func (this *UserController) unmarshalPayload(v interface{}) error {
 	// json 解析
 	// Unmarshal(data []byte, v interface{})
 	// 将json字符串解码到相应的数据结构
-	err := json.Unmarshal(c.Ctx.Input.RequestBody, &v)
+	err := json.Unmarshal(this.Ctx.Input.RequestBody, &v)
 	if err != nil {
 		logs.Error("RequestBody 解析失败！")
 	}
 	if err != nil {
-		logs.Error("unmarshal payload of %s error: %s", c.Ctx.Request.URL.Path, err)
+		logs.Error("unmarshal payload of %s error: %s", this.Ctx.Request.URL.Path, err)
 	}
 	return nil
 }
